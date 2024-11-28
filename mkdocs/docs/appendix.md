@@ -1,5 +1,7 @@
 ## Appendix
 
+Kudos to Corne who provided the base for this sample!
+
 ### Links
 
 [T80 documentation](https://www.br-automation.com/en/downloads/industrial-pcs-and-panels/power-panel-t-c-series/power-panel-t80/power-panel-t80-users-manual/)
