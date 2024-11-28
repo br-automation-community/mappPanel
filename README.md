@@ -1,9 +1,6 @@
-# mappView
-Collection of B&R mappView tips and code snippets. See [**-->Wiki<--**](https://github.com/stephan1827/mappView/wiki) for details. Use the search field on the top left to search this repository.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Made For B&R](https://github.com/hilch/BandR-badges/blob/main/Made-For-BrAutomation.svg)](https://www.br-automation.com)
 
-## Latest Updates
-15.10.2019  
-[**- mappAudit tutorial**](https://github.com/br-automation-com/mappView/wiki/(Use-case)-Use-mappAudit-with-mappView)
+This is a sample for communication from a B&R PLC to a T-Panel over OPC UA.
 
-## Disclaimer
-All samples and documentation comes „as is“, e.g. without support and warranty. You can freely copy it but use it at your own risk.
+## [**For a detailed description follow this link**](https://br-automation-com.github.io/mappPanel/)
