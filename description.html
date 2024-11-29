@@ -627,7 +627,7 @@
 <li>SetTime</li>
 </ul>
 <p>The method RestartSystem and StartUpdate automatically disconnect the connection. The connection must be re-established after the panel rebooted. Wait a few extra seconds after restart before reconnecting.</p>
-<p><strong><span style="color:red">Important Note:</span></strong> The method is executed immediately when the type was changed and the set back to 'NoMethod' when it was executed.</p>
+<p><strong><span style="color:red">Important Note:</span></strong> The method is executed immediately when the type was changed and set back to 'NoMethod' when it was executed.</p>
 <h2 id="changing-panel-data">Changing panel data</h2>
 <p>The sample allows you to change the data on the panel. The the panel manual on what data can be changed and what is read only. When parameters is changed it is not written until the command 'Write' is executed. The command 'Write' is reset to false when the execution is finished. The variable 'PowerPanel. Diag. PendingWrites' is set to true when at least one data point was changed. Many parameter changes require a restart of the panel to take affect. The following procedure is recommended:</p>
 <ul>
