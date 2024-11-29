@@ -1,3 +1,10 @@
+#### 29.11.2024
+
+* Fixed bindings
+* Added more screen data
+* Removed obsolete files
+* Added simple regex for network inputs 
+
 #### 28.11.2024
 
 First release
