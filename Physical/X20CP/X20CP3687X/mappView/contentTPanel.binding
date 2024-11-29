@@ -414,5 +414,17 @@
 <Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.Manufacturer" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtManufacturer" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationLeftPos" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationLeftPos" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationDelay" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationDelay" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationTopPos" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationTopPos" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
