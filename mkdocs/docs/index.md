@@ -1,6 +1,6 @@
 ## Introduction
 
-This is a sample for communication from a B&R PLC to a T-Panel over OPC UA. The sample consists of the package mappPanel and the corresponding mappView page. See the [import](Import/import.md) page for details how to integrate the sample into your project.
+This is a sample for communication from a B&R PLC to a T-Panel over OPC UA. You can view change data as well as calling methods (functions). The sample consists of the package mappPanel and the corresponding mappView page. See the [import](Import/import.md) page for details how to integrate the sample into your project.
 
 ![](./images/overview.jpg)
 

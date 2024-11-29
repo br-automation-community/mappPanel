@@ -6,6 +6,12 @@ Kudos to Corne who provided the base for this sample!
 
 [T80 documentation](https://www.br-automation.com/en/downloads/industrial-pcs-and-panels/power-panel-t-c-series/power-panel-t80/power-panel-t80-users-manual/)
 
+[T50 documentation](https://www.br-automation.com/en/downloads/industrial-pcs-and-panels/power-panel-t-c-series/power-panel-t50/power-panel-t50-users-manual/)
+
+[FT50 documentation](https://www.br-automation.com/en/downloads/industrial-pcs-and-panels/power-panel-t-c-series/power-panel-ft50/power-panel-ft50-users-manual/)
+
+[T30 documentation](https://www.br-automation.com/en/downloads/industrial-pcs-and-panels/power-panel-t-c-series/power-panel-t30/power-panel-t30-users-manual/)
+
 ### Supported OPC UA tag notes
 
 Here are some notes for supported OPC UA tags by panel and version. This list may not be complete. See the panel documentation for more details.

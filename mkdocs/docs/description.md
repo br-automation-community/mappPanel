@@ -181,7 +181,7 @@ The following methods can be called on the panel:
 
 The method RestartSystem and StartUpdate automatically disconnect the connection. The connection must be re-established after the panel rebooted. Wait a few extra seconds after restart before reconnecting.
 
-**<span style="color:red">Important Note:</span>** The method is executed immediately when the type was changed and the set back to 'NoMethod' when it was executed.
+**<span style="color:red">Important Note:</span>** The method is executed immediately when the type was changed and set back to 'NoMethod' when it was executed.
 
 ## Changing panel data
 
