@@ -101,6 +101,9 @@ TYPE
 		EnableScreensaver : BOOL;
 		ScreensaverIdleTime : UINT;
 		ScreensaverType : UDINT;
+		BootAnimationDelay : UINT;
+		BootAnimationLeftPos : UINT;
+		BootAnimationTopPos : UINT;
 	END_STRUCT;
 	AudioType : 	STRUCT 
 		EnableBuzzer : BOOL;
