@@ -406,5 +406,13 @@
 <Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VisHelperErrorVisible" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="btnPanelResetError" attribute="visible" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.Model" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtModelNumber" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.Manufacturer" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtManufacturer" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
