@@ -133,6 +133,9 @@ TYPE
 		DisablePinchGesture : BOOL;
 		SetOverrideViewport : BOOL;
 		ViewportSettings : STRING[79];
+		IgnoreServerCertificateErrors : BOOL;
+		EnableScreenCapture : BOOL;
+		SuppressScrnCaptSecWarn : BOOL;
 	END_STRUCT;
 	StorageType : 	STRUCT 
 		USBMemoryShare : BOOL;

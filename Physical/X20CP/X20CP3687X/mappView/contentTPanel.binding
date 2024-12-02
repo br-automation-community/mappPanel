@@ -426,5 +426,17 @@
 <Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationTopPos" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationTopPos" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.SuppressScrnCaptSecWarn" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglSuppressScrnCaptSecWarn" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.EnableScreenCapture" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglEnableScreenCapture" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.IgnoreServerCertificateErrors" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglIgnoreServerCertificateErrors" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
