@@ -126,6 +126,7 @@ TYPE
 		UseRfbExtension : BOOL;
 		VNCLocalWindowScaling : BOOL;
 		VNCBackgroundColor : STRING[79];
+		VNCConnectionMonitor : BOOL;
 	END_STRUCT;
 	WebType : 	STRUCT 
 		WebServer : STRING[79];
