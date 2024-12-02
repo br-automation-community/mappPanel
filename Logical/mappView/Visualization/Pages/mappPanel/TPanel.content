@@ -121,8 +121,6 @@
           <Widgets>
             <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglGesture" top="20" left="310" width="110" zIndex="0" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="labGesture" top="20" left="0" width="300" zIndex="1" text="Open service page with gesture" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglGesture1" top="70" left="310" width="110" zIndex="2" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labGesture1" top="70" left="0" width="300" zIndex="3" text="Open service page with gesture" textAlign="right" fontSize="20px" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabVNC" left="0" width="200" height="50" zIndex="7" text="VNC" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">
@@ -133,8 +131,10 @@
             <Widget xsi:type="widgets.brease.Label" id="labVncRfB" top="70" left="-90" width="300" zIndex="3" text="Use RFB Extension" textAlign="right" fontSize="20px" />
             <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglVncScaling" top="120" left="220" width="110" zIndex="4" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="labVncScaling" top="120" left="-90" width="300" zIndex="5" text="Windows Scaling" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.Label" id="labVncBackcolor" top="170" left="10" width="200" zIndex="6" text="VNC Back Color" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.TextInput" id="txtVncBackcolor" top="170" left="220" width="230" zIndex="7" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.Label" id="labVncBackcolor" top="220" left="10" width="200" zIndex="6" text="VNC Back Color" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtVncBackcolor" top="220" left="220" width="230" zIndex="7" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglVNCConnectionMonitor" top="170" left="220" width="110" zIndex="8" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labVNCConnectionMonitor" top="170" left="-90" width="300" zIndex="9" text="Connection Monitor" textAlign="right" fontSize="20px" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabWeb" left="0" width="200" height="50" zIndex="8" text="Web" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">

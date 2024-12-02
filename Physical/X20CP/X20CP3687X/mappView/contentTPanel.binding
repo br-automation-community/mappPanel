@@ -438,5 +438,9 @@
 <Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.IgnoreServerCertificateErrors" attribute="value" />
 <Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglIgnoreServerCertificateErrors" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.VNCConnectionMonitor" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglVNCConnectionMonitor" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
