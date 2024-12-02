@@ -54,3 +54,19 @@ This error can occur when the panel type is not set correct. Check the panel typ
 This error can occur when the OPC UA server on the panel is turned of. Make sure the OPC UA server is enabled in the panel settings.
 
 ![](./images/FAQs1.jpg)
+
+#### When I try to compile the sample I get the error "undefined reference to 'UaSrv_GetServerState"
+
+This error occurs when you dont use the latest OpcUa library. If you can't update the library, you can use the following workaround:
+
+Change the line 
+
+```
+IF (UaSrv_GetServerState() = UASS_Running) AND (PowerPanel.Diag.PingOk) AND (VariablesTotalIndex > 0) THEN
+```
+
+in
+
+```
+IF (PowerPanel.Diag.PingOk) AND (VariablesTotalIndex > 0) THEN
+```
