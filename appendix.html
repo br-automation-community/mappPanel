@@ -374,6 +374,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#when-i-try-to-compile-the-sample-i-get-the-error-undefined-reference-to-uasrv_getserverstate" class="md-nav__link">
+    When I try to compile the sample I get the error "undefined reference to 'UaSrv_GetServerState"
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -534,6 +541,14 @@ The mode and port settings for VNC and WebGL can be set separately starting with
 <h4 id="connection-is-not-established-an-error-2147811328-is-returned-from-connecting-to-panel">Connection is not established an error 2147811328 is returned from connecting to panel</h4>
 <p>This error can occur when the OPC UA server on the panel is turned of. Make sure the OPC UA server is enabled in the panel settings.</p>
 <p><img alt="" src="images/FAQs1.jpg" /></p>
+<h4 id="when-i-try-to-compile-the-sample-i-get-the-error-undefined-reference-to-uasrv_getserverstate">When I try to compile the sample I get the error "undefined reference to 'UaSrv_GetServerState"</h4>
+<p>This error occurs when you dont use the latest OpcUa library. If you can't update the library, you can use the following workaround:</p>
+<p>Change the line </p>
+<pre><code>IF (UaSrv_GetServerState() = UASS_Running) AND (PowerPanel.Diag.PingOk) AND (VariablesTotalIndex &gt; 0) THEN
+</code></pre>
+<p>in</p>
+<pre><code>IF (PowerPanel.Diag.PingOk) AND (VariablesTotalIndex &gt; 0) THEN
+</code></pre>
 
 
 
