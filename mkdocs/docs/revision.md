@@ -1,3 +1,8 @@
+#### 3.12.2024
+
+* Added new datapoint for web (IgnoreServerCertificateErrors, EnableScreenCapture, SuppressScrnCaptSecWarn)
+* Added new datapoint for VNC (VNCConnectionMonitor)
+
 #### 29.11.2024
 
 * Fixed bindings
