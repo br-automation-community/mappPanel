@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="6.0"?>
+<OpcUaSource FileVersion="10">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <Module Name="&lt;Default&gt;">
+    <Task Name="TPanel">
+      <Variable Name="PowerPanel" RecursiveEnable="2">
+        <Variable Name="Diag">
+          <Variable Name="VariableErrors" RecursiveEnable="2" />
+        </Variable>
+      </Variable>
+    </Task>
+  </Module>
+</OpcUaSource>

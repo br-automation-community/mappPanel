@@ -4,13 +4,28 @@ ACTION DefineVariablesRead:
 		FOR i := 0 TO VariablesTotalIndex - 1 DO
 			pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (i * SIZEOF(pBrowseVar)));			
 			IF (pBrowseVar.Identifier <> '') AND (pBrowseVar.Access <> 'M') THEN
+				brsitoa(j, ADR(TmpStr));
 				UANodeIDMonitor[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
-				UANodeIDMonitor[j].IdentifierType := UAIdentifierType_Numeric;
+				UANodeIDMonitor[j].IdentifierType := UAIT_Numeric;
 				UANodeIDMonitor[j].Identifier := pBrowseVar.Identifier;
-				VariablesReadInfo[j] := '::';
-				VariablesReadInfo[j] := CONCAT(VariablesReadInfo[j], TaskName);
-				VariablesReadInfo[j] := CONCAT(VariablesReadInfo[j], ':');
-				VariablesReadInfo[j] := CONCAT(VariablesReadInfo[j], pBrowseVar.VariableName);
+
+				VariablesReadInfo[j].Values := '::';
+				VariablesReadInfo[j].Values := CONCAT(VariablesReadInfo[j].Values, TaskName);
+				VariablesReadInfo[j].Values := CONCAT(VariablesReadInfo[j].Values, ':');
+				VariablesReadInfo[j].Values := CONCAT(VariablesReadInfo[j].Values, pBrowseVar.VariableName);
+
+				VariablesReadInfo[j].TimeStamps := '::';
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, TaskName);
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, ':TimeStamps[');
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, TmpStr);
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, ']');
+
+				VariablesReadInfo[j].NodeQualityIDs := '::';
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, TaskName);
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, ':NodeQualityIDs[');
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, TmpStr);
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, ']');
+
 				j := j + 1;
 			END_IF
 			IF (j > INDEX_LIST) THEN
@@ -76,8 +91,8 @@ ACTION CheckValueChange:
 				pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (VariablesWriteInfo[i].ObjectIndex * SIZEOF(pBrowseVar)));		
 				UANodeIDWrite[j].Identifier := pBrowseVar.Identifier;
 				UANodeIDWrite[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
-				UANodeIDWrite[j].IdentifierType := UAIdentifierType_Numeric;
-				VariablesChanged[j] := VariablesReadInfo[VariablesWriteInfo[i].ObjectIndex];
+				UANodeIDWrite[j].IdentifierType := UAIT_Numeric;
+				VariablesChanged[j] := VariablesReadInfo[VariablesWriteInfo[i].ObjectIndex].Values;
 				
 				PowerPanel.Diag.PendingWrites := TRUE;
 
@@ -101,7 +116,7 @@ ACTION DefineMethod:
 		IF (MethodIndex > 0) AND (MethodPathLen <= 12) THEN
 			fbMethodGetHandle.ObjectNodeID.Identifier := pBrowseVar.Identifier;
 			fbMethodGetHandle.ObjectNodeID.NamespaceIndex := pBrowseVar.NamespaceIndex;
-			fbMethodGetHandle.ObjectNodeID.IdentifierType := UAIdentifierType_Numeric;
+			fbMethodGetHandle.ObjectNodeID.IdentifierType := UAIT_Numeric;
 			EXIT;
 		END_IF
 	END_FOR
@@ -142,7 +157,7 @@ ACTION DefineMethod:
 		IF (MethodIndex > 0) THEN
 			fbMethodGetHandle.MethodNodeID.Identifier := pBrowseVar.Identifier;
 			fbMethodGetHandle.MethodNodeID.NamespaceIndex := pBrowseVar.NamespaceIndex;
-			fbMethodGetHandle.MethodNodeID.IdentifierType := UAIdentifierType_Numeric;
+			fbMethodGetHandle.MethodNodeID.IdentifierType := UAIT_Numeric;
 			
 			IF PowerPanel.Method.Type = SetBrightness THEN
 				MethodCall := '/2:MethodSet/4:SetBrightness';
