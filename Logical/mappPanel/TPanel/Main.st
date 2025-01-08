@@ -1,5 +1,8 @@
 
 PROGRAM _CYCLIC
+	TimeStamps;
+	NodeQualityIDs;
+	
 	// Make sure panel is reachable
 	CheckPing;
 	
@@ -8,8 +11,8 @@ PROGRAM _CYCLIC
 	PowerPanel.Diag.VisHelperErrorVisible := PowerPanel.Diag.Step = tpERROR;
 
 	// Some helpers for the OPC UA data
-	PowerPanel.Data.AboutInfo.Manufacturer := Manufacturer.Text;
-	PowerPanel.Data.AboutInfo.Model := Model.Text;
+	PowerPanel.Data.AboutInfo.Manufacturer := WSTRING_TO_STRING(Manufacturer.Text);
+	PowerPanel.Data.AboutInfo.Model := WSTRING_TO_STRING(Model.Text);
 
 	// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 	// Panel OPC UA connection state machine
@@ -62,7 +65,7 @@ PROGRAM _CYCLIC
 					FOR i := 0 TO INDEX_LIST DO	
 						MonitoringParameters[i].SamplingInterval := PublishingInterval;
 						MonitoringParameters[i].Deadband := 0;
-						MonitoringParameters[i].DeadbandType := UADeadbandType_None;
+						MonitoringParameters[i].DeadbandType := UADT_None;
 						MonitoringParameters[i].QueueSize := 0;
 					END_FOR
 					
@@ -130,7 +133,7 @@ PROGRAM _CYCLIC
 			fbTranslatePath.ConnectionHdl := fbConnect.ConnectionHdl;
 			fbTranslatePath.RelativePath := pBrowseVar.BrowsePath;
 			fbTranslatePath.StartNodeID.Identifier := '84';
-			fbTranslatePath.StartNodeID.IdentifierType := UAIdentifierType_Numeric;
+			fbTranslatePath.StartNodeID.IdentifierType := UAIT_Numeric;
 			fbTranslatePath.Timeout := T#10s;
 
 			IF (pBrowseVar.Access <> 'S') THEN
@@ -270,7 +273,7 @@ PROGRAM _CYCLIC
 				FOR i := 0 TO VariablesReadIndex DO
 					IF fbMonitoredItemAddList.NodeErrorIDs[i] <> 0 THEN
 						PowerPanel.Diag.StatusId := fbMonitoredItemAddList.NodeErrorIDs[i];
-						PowerPanel.Diag.StatusText := VariablesReadInfo[i];
+						PowerPanel.Diag.StatusText := VariablesReadInfo[i].Values;
 					END_IF
 				END_FOR
 				
@@ -290,6 +293,7 @@ PROGRAM _CYCLIC
 			fbMonitoredItemAddList.NodeHdlCount := VariablesReadIndex;
 			fbMonitoredItemAddList.NodeHdls := fbNodeGetHandleList.NodeHdls;
 			fbMonitoredItemAddList.NodeAddInfos := NodeAddInfoMonitor;
+			fbMonitoredItemAddList.SyncMode := UAMS_FwSync;
 			fbMonitoredItemAddList.Timeout := T#10s;
 
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -314,7 +318,7 @@ PROGRAM _CYCLIC
 				FOR i := 0 TO VariablesReadIndex DO
 					IF fbMonitoredItemAddList.NodeErrorIDs[i] <> 0 THEN
 						PowerPanel.Diag.StatusId := fbMonitoredItemAddList.NodeErrorIDs[i];
-						PowerPanel.Diag.StatusText := VariablesReadInfo[i];
+						PowerPanel.Diag.StatusText := VariablesReadInfo[i].Values;
 					END_IF
 				END_FOR
 				
@@ -662,10 +666,10 @@ PROGRAM _CYCLIC
 	fbTranslatePath();
 	fbSubscriptionCreate(PublishingInterval := PublishingInterval); 
 	fbNodeGetHandleList();
-	fbMonitoredItemAddList(TimeStamps := TimeStamps, RemainingValueCount := RemainingValueCount, MonitoringSettings := MonitoringParameters, Variables := VariablesReadInfo, ValuesChanged := ValuesChanged, NodeQualityIDs := NodeQualityIDs);
+	fbMonitoredItemAddList(MonitoringParameter := MonitoringParameters, Variables := VariablesReadInfo, ValuesChanged := ValuesChanged, MinLostValueCount := ValuesLostValueCount);
 	fbWriteBulk();
 	fbMethodGetHandle();
-	fbMethodCall(InputArguments := InputArguments, OutputArguments := OutputArguments);	
+	fbMethodCall(InputArguments := InputArguments, OutputArguments := OutputArguments, MethodResult := MethodResult);	
 	fbMethodReleaseHandle();
 	fbMonitoredItemRemoveList();
 	fbSubscriptionDelete();

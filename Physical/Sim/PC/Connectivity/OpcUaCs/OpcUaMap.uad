@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="6.0"?>
+<OpcUaSource FileVersion="10" ArVersion="I4.93">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleName="Administrators" Access="0x10E5" />
+        <ACE RoleName="Everyone" Access="0x10A5" />
+      </ACL>
+      <ACL Id="3">
+        <ACE RoleName="Administrators" Access="0x10E5" />
+        <ACE RoleName="Everyone" Access="0x10E5" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <Module Name="&lt;Default&gt;" />
+</OpcUaSource>
