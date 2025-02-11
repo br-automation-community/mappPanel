@@ -16,7 +16,13 @@ Kudos to Corne who provided the base for this sample!
 
 Here are some notes for supported OPC UA tags by panel and version. This list may not be complete. See the panel documentation for more details.
 
-#### Remote Access
+#### Firmware 1.7.0
+
+The following new parameters were introduced with PPT system version 1.7.0
+
+* Web: WaitForSync
+
+#### Firmware 1.6.0
 
 Changed parameter names starting with PPT system version 1.6.0
 The mode and port settings for VNC and WebGL can be set separately starting with this PPT system version:
@@ -30,6 +36,11 @@ The mode and port settings for VNC and WebGL can be set separately starting with
 |RemoteAccessPortWebGL|| x|
 |RemoteAccessWSPortWebGL|| x|
 |RemoteAccessPortVNC|| x|
+
+The following new parameters were introduced with PPT system version 1.7.0
+
+* Web: Enable screen capture
+* Web: Suppress screen capture security warning
 
 #### Methods
 
