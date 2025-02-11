@@ -137,6 +137,7 @@ TYPE
 		IgnoreServerCertificateErrors : BOOL;
 		EnableScreenCapture : BOOL;
 		SuppressScrnCaptSecWarn : BOOL;
+		WaitForNtpSync : BOOL;
 	END_STRUCT;
 	StorageType : 	STRUCT 
 		USBMemoryShare : BOOL;

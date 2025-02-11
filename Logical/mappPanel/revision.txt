@@ -1,3 +1,6 @@
+11.02.2025
+- Added new datapoint for web (Wait for NTP synchronization)
+
 3.12.2024
 - Added new datapoint for web (IgnoreServerCertificateErrors, EnableScreenCapture, SuppressScrnCaptSecWarn)
 - Added new datapoint for VNC (VNCConnectionMonitor)
