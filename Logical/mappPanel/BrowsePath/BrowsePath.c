@@ -63,6 +63,7 @@ struct Browse_type BrowseDat[] = {
 	{"/3:Configuration/4:Web/4:IgnoreServerCertificateErrors","PowerPanel.Data.Web.IgnoreServerCertificateErrors","",0x0000,"","W"},
 	{"/3:Configuration/4:Web/4:EnableScreenCapture","PowerPanel.Data.Web.EnableScreenCapture","",0x0000,"","W"},
 	{"/3:Configuration/4:Web/4:SuppressScrnCaptSecWarn","PowerPanel.Data.Web.SuppressScrnCaptSecWarn","",0x0000,"","W"},
+	{"/3:Configuration/4:Web/4:WaitForNtpSync","PowerPanel.Data.Web.WaitForNtpSync","",0x0000,"","W"},
 	{"/3:Configuration/4:Storage/4:USBMemoryShare","PowerPanel.Data.Storage.USBMemoryShare","",0x0000,"","W"},
 	{"/3:Configuration/4:Storage/4:UserMemoryShare","PowerPanel.Data.Storage.UserMemoryShare","",0x0000,"","W"},
 	{"/3:Configuration/4:RemoteAccess/4:EnableRemoteAccess","PowerPanel.Data.RemoteAccess.EnableRemoteAccess","",0x0000,"","W"},
