@@ -140,7 +140,7 @@
         <Widget xsi:type="widgets.brease.TabItem" id="tabWeb" left="0" width="200" height="50" zIndex="8" text="Web" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">
           <Widgets>
             <Widget xsi:type="widgets.brease.Label" id="labWebIp" top="20" left="30" width="200" zIndex="0" text="IP Address" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.TextInput" id="txtIWebIp" top="20" left="240" width="290" zIndex="1" inputRestriction="^[0-9.]+$" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtIWebIp" top="20" left="240" width="290" zIndex="1" fontSize="20px" padding="0px 5px 0px 5px" />
             <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglVirtualKeyboard" top="70" left="240" width="110" zIndex="2" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="labVirtualKeyboard" top="70" left="-70" width="300" zIndex="3" text="Virtual Keyboard" textAlign="right" fontSize="20px" />
             <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglPinGesture" top="110" left="240" width="110" zIndex="4" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
