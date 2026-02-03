@@ -79,10 +79,16 @@
           <Widgets>
             <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglNtpServer" top="20" left="230" width="110" zIndex="0" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
             <Widget xsi:type="widgets.brease.Label" id="labNtpServer" top="20" left="20" width="200" zIndex="1" text="Enable NTP server" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.Label" id="labNtpServerIp" top="70" left="20" width="200" zIndex="2" text="NTP server" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.TextInput" id="txtNtpServer" top="70" left="230" width="230" zIndex="3" fontSize="20px" padding="0px 5px 0px 5px" />
-            <Widget xsi:type="widgets.brease.Label" id="labNtpCurrentTime" top="120" left="20" width="200" zIndex="4" text="Current Date &amp; Time" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.DateTimeOutput" id="dtNtpCurrentTime" top="120" left="230" zIndex="5" format="yyyy-MM-dd HH:mm:ss" borderWidth="1px" borderColor="rgba(71, 71, 71, 1)" textAlign="center" />
+            <Widget xsi:type="widgets.brease.Label" id="labNtpServerIp1" top="70" left="20" width="200" zIndex="2" text="NTP server 1" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtNtpServer1" top="70" left="230" width="230" zIndex="3" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.Label" id="labNtpCurrentTime" top="230" left="20" width="200" zIndex="4" text="Current Date &amp; Time" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.DateTimeOutput" id="dtNtpCurrentTime" top="230" left="230" zIndex="5" format="yyyy-MM-dd HH:mm:ss" borderWidth="1px" borderColor="rgba(71, 71, 71, 1)" textAlign="center" />
+            <Widget xsi:type="widgets.brease.Label" id="labNtpServerIp2" top="110" left="20" width="200" zIndex="6" text="NTP server 2" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtNtpServer2" top="110" left="230" width="230" zIndex="7" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.Label" id="labNtpServerIp3" top="150" left="20" width="200" zIndex="8" text="NTP server 3" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtNtpServer3" top="150" left="230" width="230" zIndex="9" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.Label" id="labNtpServerIp4" top="190" left="20" width="200" zIndex="10" text="NTP server 4" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtNtpServer4" top="190" left="230" width="230" zIndex="11" fontSize="20px" padding="0px 5px 0px 5px" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabScreen" left="0" width="200" height="50" zIndex="4" text="Screen" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">
@@ -119,8 +125,10 @@
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabGesture" left="0" width="200" height="50" zIndex="6" text="Gesture" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">
           <Widgets>
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglGesture" top="20" left="310" width="110" zIndex="0" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labGesture" top="20" left="0" width="300" zIndex="1" text="Open service page with gesture" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglGestureServicePage" top="20" left="310" width="110" zIndex="0" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labGestureServicePage" top="20" left="0" width="300" zIndex="1" text="Open service page with gesture" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglGesture1" top="70" left="310" width="110" zIndex="2" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labGestureReboot" top="70" left="0" width="300" zIndex="3" text="Reboot panel with gesture" textAlign="right" fontSize="20px" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabVNC" left="0" width="200" height="50" zIndex="7" text="VNC" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">
@@ -141,22 +149,26 @@
           <Widgets>
             <Widget xsi:type="widgets.brease.Label" id="labWebIp" top="20" left="30" width="200" zIndex="0" text="IP Address" textAlign="right" fontSize="20px" />
             <Widget xsi:type="widgets.brease.TextInput" id="txtIWebIp" top="20" left="240" width="290" zIndex="1" fontSize="20px" padding="0px 5px 0px 5px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglVirtualKeyboard" top="70" left="240" width="110" zIndex="2" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labVirtualKeyboard" top="70" left="-70" width="300" zIndex="3" text="Virtual Keyboard" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglPinGesture" top="110" left="240" width="110" zIndex="4" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labPinGesture" top="110" left="-70" width="300" zIndex="5" text="Disable Pin Gesture" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.Label" id="labViewpointSettings" top="380" left="30" width="200" zIndex="6" text="Viewpoint Settings" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.TextInput" id="txtViewpointSettings" top="420" left="60" width="470" zIndex="7" fontSize="20px" padding="0px 5px 0px 5px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglOverrideViewpoint" top="150" left="240" width="110" zIndex="8" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labOverrideViewpoint" top="150" left="-70" width="300" zIndex="9" text="Override Viewpoint" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglIgnoreServerCertificateErrors" top="190" left="240" width="110" zIndex="10" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labIgnoreServerCertificateErrors" top="190" left="-70" width="300" zIndex="11" text="Ignore Certificate Errors" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglEnableScreenCapture" top="230" left="240" width="110" zIndex="12" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labEnableScreenCapture" top="230" left="-70" width="300" zIndex="13" text="Enable Screen Capture" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglSuppressScrnCaptSecWarn" top="270" left="240" width="110" zIndex="14" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labSuppressScrnCaptSecWarn" top="270" left="-70" width="300" zIndex="15" text="No Capture Warning" textAlign="right" fontSize="20px" />
-            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglWaitForNtpSync" top="310" left="240" width="110" zIndex="16" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
-            <Widget xsi:type="widgets.brease.Label" id="labWaitForNtpSync" top="310" left="-70" width="300" zIndex="17" text="Wait for NTP sync" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglVirtualKeyboard" top="60" left="240" width="110" zIndex="2" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labVirtualKeyboard" top="60" left="-70" width="300" zIndex="3" text="Virtual Keyboard" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglPinGesture" top="140" left="240" width="110" zIndex="4" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labPinGesture" top="140" left="-70" width="300" zIndex="5" text="Disable Pin Gesture" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.Label" id="labViewpointSettings" top="420" left="30" width="200" zIndex="6" text="Viewpoint Settings" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.TextInput" id="txtViewpointSettings" top="420" left="240" width="290" zIndex="7" fontSize="20px" padding="0px 5px 0px 5px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglOverrideViewpoint" top="180" left="240" width="110" zIndex="8" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labOverrideViewpoint" top="180" left="-70" width="300" zIndex="9" text="Override Viewpoint" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglIgnoreServerCertificateErrors" top="220" left="240" width="110" zIndex="10" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labIgnoreServerCertificateErrors" top="220" left="-70" width="300" zIndex="11" text="Ignore Certificate Errors" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglEnableScreenCapture" top="260" left="240" width="110" zIndex="12" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labEnableScreenCapture" top="260" left="-70" width="300" zIndex="13" text="Enable Screen Capture" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglSuppressScrnCaptSecWarn" top="300" left="240" width="110" zIndex="14" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labSuppressScrnCaptSecWarn" top="300" left="-70" width="300" zIndex="15" text="No Capture Warning" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglWaitForNtpSync" top="340" left="240" width="110" zIndex="16" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labWaitForNtpSync" top="340" left="-70" width="300" zIndex="17" text="Wait for NTP sync" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.ToggleSwitch" id="tglDisableGPU" top="100" left="240" width="110" zIndex="18" mouseDownText="On" text="Off" mouseDownImageColor="rgba(0, 128, 0, 1)" mouseDownBackGroundGradient="linear-gradient(to bottom, #4A4A4A 0%,#0fb407 100%)" mouseDownBackColor="rgba(0, 128, 0, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="labDisableGPU" top="100" left="-70" width="300" zIndex="19" text="Disable GPU" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.Label" id="labNTPSyncTimeout" top="380" left="30" width="200" zIndex="20" text="NTP sync timeout" textAlign="right" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="numNTPSyncTimeout" top="380" left="240" width="110" zIndex="21" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="1000" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" unitAlign="right" fontSize="20px" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabStorage" left="0" width="200" height="50" zIndex="9" text="Storage" activeCornerRadius="5px" activeBackColor="rgba(224, 224, 224, 1)" fontSize="22px">
