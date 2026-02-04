@@ -3,4 +3,7 @@
 
 This is a sample for communication from a B&R PLC to a T-Panel over OPC UA.
 
+![](https://github.com/br-automation-community/mappPanel/blob/dev/mkdocs/docs/images/overview.jpg)
+
+
 ## [**For a detailed description follow this link**](https://br-automation-community.github.io/mappPanel/)
