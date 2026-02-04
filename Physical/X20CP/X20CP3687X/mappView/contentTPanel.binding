@@ -6,10 +6,6 @@
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numProductCode" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.VendorId" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numVendorID" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.SerialNumber" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSerialNumber" attribute="value" />
 		</Binding>
@@ -36,10 +32,6 @@
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Startup.ShowBootLogoVNC" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglBootLogoVNC" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Startup.USBMemoryShare" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglShareUsbMemory" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Startup.ShowBootLogoWeb" attribute="value" />
@@ -242,20 +234,8 @@
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglVncRfB" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.VNCBackgroundColor" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVncBackcolor" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.VNCServer" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtIVncIp" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.ViewportSettings" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtViewpointSettings" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.SetOverrideViewport" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglOverrideViewpoint" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.DisablePinchGesture" attribute="value" />
@@ -403,20 +383,8 @@
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtModelNumber" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.Manufacturer" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtManufacturer" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationLeftPos" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationLeftPos" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationDelay" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationDelay" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationTopPos" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationTopPos" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.SuppressScrnCaptSecWarn" attribute="value" />
@@ -443,24 +411,12 @@
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtNtpServer1" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.NTPServer3" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtNtpServer3" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.NTPServer2" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtNtpServer2" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.NTPServer4" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtNtpServer4" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Gesture.OpenServicePage" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglGestureServicePage" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Gesture.RestartSystem" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglGesture1" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.DisableGPU" attribute="value" />
@@ -470,5 +426,9 @@
 			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.NtpSyncTimeout" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numNTPSyncTimeout" attribute="value" />
 		</Binding>
-	</Bindings>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.SynchronizeTimeWithWebServer" attribute="value" />
+<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglSynchronizeTimeWithWebServer" attribute="value" />
+</Binding>
+</Bindings>
 </BindingsSet>

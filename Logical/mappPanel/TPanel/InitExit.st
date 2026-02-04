@@ -16,13 +16,14 @@ PROGRAM _INIT
 		PowerPanel.Diag.StatusText := 'no data module found';
 		PowerPanel.Diag.Step := tpERROR;
 	END_IF
+	DataShadow;
 END_PROGRAM
 
 PROGRAM _EXIT
 	REPEAT
 		fbMonitoredItemRemoveList.Execute := TRUE;
 		fbMonitoredItemRemoveList.SubscriptionHdl := fbSubscriptionCreate.SubscriptionHdl;
-		fbMonitoredItemRemoveList.MonitoredItemHdlCount := VariablesReadIndex;
+		fbMonitoredItemRemoveList.MonitoredItemHdlCount := VariablesIndex;
 		fbMonitoredItemRemoveList.MonitoredItemHdls := fbMonitoredItemAddList.MonitoredItemHdls;
 		fbMonitoredItemRemoveList();
 		UNTIL NOT fbMonitoredItemRemoveList.Busy
@@ -37,7 +38,7 @@ PROGRAM _EXIT
 		fbNodeReleaseHandleList.Execute := TRUE;
 		fbNodeReleaseHandleList.ConnectionHdl := fbConnect.ConnectionHdl;
 		fbNodeReleaseHandleList.NodeHdls := fbNodeGetHandleList.NodeHdls;
-		fbNodeReleaseHandleList.NodeHdlCount := VariablesReadIndex;
+		fbNodeReleaseHandleList.NodeHdlCount := VariablesIndex;
 		fbNodeReleaseHandleList();
 		UNTIL NOT fbNodeReleaseHandleList.Busy
 	END_REPEAT	
