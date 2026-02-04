@@ -144,6 +144,7 @@ TYPE
 		SuppressScrnCaptSecWarn : BOOL;
 		WaitForNtpSync : BOOL;
 		NtpSyncTimeout : UINT;
+		SynchronizeTimeWithWebServer : BOOL;
 	END_STRUCT;
 	StorageType : 	STRUCT 
 		USBMemoryShare : BOOL;
@@ -200,6 +201,8 @@ TYPE
 		SetTime
 		);
 	PvType : 	STRUCT 
+		Name : STRING[MAX_LENGTH_VARIABLE];
+		Writable : BOOL;
 		ObjectIndex : INT;
 		Adr : UDINT;
 		AdrShadow : UDINT;

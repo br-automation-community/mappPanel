@@ -115,10 +115,7 @@ PROGRAM _CYCLIC
 				PowerPanel.Diag.ErrorStep := PowerPanel.Diag.Step;
 				PowerPanel.Diag.Step := tpERROR;
 			END_IF
-
-			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-			// Function call
-			
+		
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 			// Get path details
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,9 +191,14 @@ PROGRAM _CYCLIC
 				ELSE
 					fbWritePath.enable := FALSE;
 
-					DefineVariablesRead;
-					DefineVariablesWrite;
-					PowerPanel.Diag.Step := tpSUBSCRIPTION;
+					DefineVariables;
+					// Make sure that there are no errors
+					IF (PowerPanel.Diag.StatusId <> UINT_TO_DWORD(ERR_FUB_BUSY)) THEN
+						PowerPanel.Diag.ErrorStep := PowerPanel.Diag.Step;
+						PowerPanel.Diag.Step := tpERROR;
+					ELSE
+						PowerPanel.Diag.Step := tpSUBSCRIPTION;
+					END_IF
 				END_IF
 
 				// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -247,7 +249,7 @@ PROGRAM _CYCLIC
 			fbNodeGetHandleList.Execute := TRUE;
 			fbNodeGetHandleList.ConnectionHdl := fbConnect.ConnectionHdl;
 			fbNodeGetHandleList.NodeIDs := UANodeIDMonitor;
-			fbNodeGetHandleList.NodeIDCount := VariablesReadIndex;
+			fbNodeGetHandleList.NodeIDCount := VariablesIndex;
 			fbNodeGetHandleList.Timeout := T#10s;
 
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -267,10 +269,10 @@ PROGRAM _CYCLIC
 				END_IF
 
 				// Find broken variable
-				FOR i := 0 TO VariablesReadIndex DO
+				FOR i := 0 TO VariablesIndex DO
 					IF fbMonitoredItemAddList.NodeErrorIDs[i] <> 0 THEN
 						PowerPanel.Diag.StatusId := fbMonitoredItemAddList.NodeErrorIDs[i];
-						PowerPanel.Diag.StatusText := VariablesReadInfo[i];
+						PowerPanel.Diag.StatusText := VariablesInfo[i].Name;
 					END_IF
 				END_FOR
 				
@@ -287,7 +289,7 @@ PROGRAM _CYCLIC
 			// Set parameters for function call
 			fbMonitoredItemAddList.Execute := TRUE;
 			fbMonitoredItemAddList.SubscriptionHdl := fbSubscriptionCreate.SubscriptionHdl;
-			fbMonitoredItemAddList.NodeHdlCount := VariablesReadIndex;
+			fbMonitoredItemAddList.NodeHdlCount := VariablesIndex;
 			fbMonitoredItemAddList.NodeHdls := fbNodeGetHandleList.NodeHdls;
 			fbMonitoredItemAddList.NodeAddInfos := NodeAddInfoMonitor;
 			fbMonitoredItemAddList.Timeout := T#10s;
@@ -311,10 +313,10 @@ PROGRAM _CYCLIC
 				PowerPanel.Diag.StatusText := 'Error monitoring to data';
 				
 				// Find broken variable
-				FOR i := 0 TO VariablesReadIndex DO
+				FOR i := 0 TO VariablesIndex DO
 					IF fbMonitoredItemAddList.NodeErrorIDs[i] <> 0 THEN
 						PowerPanel.Diag.StatusId := fbMonitoredItemAddList.NodeErrorIDs[i];
-						PowerPanel.Diag.StatusText := VariablesReadInfo[i];
+						PowerPanel.Diag.StatusText := VariablesInfo[i].Name;
 					END_IF
 				END_FOR
 				
@@ -342,8 +344,10 @@ PROGRAM _CYCLIC
 			// Wait for first values to arrive
 			IF PowerPanel.Data.AboutInfo.SerialNumber <> '' THEN
 				// Create variable shadow for write variables
-				FOR i := 0 TO VariablesWriteIndex - 1 DO
-					brsmemcpy(VariablesWriteInfo[i].AdrShadow, VariablesWriteInfo[i].Adr, VariablesWriteInfo[i].DataLen);
+				FOR i := 0 TO VariablesIndex DO
+					IF VariablesInfo[i].Writable THEN
+						brsmemcpy(VariablesInfo[i].AdrShadow, VariablesInfo[i].Adr, VariablesInfo[i].DataLen);
+					END_IF
 				END_FOR
 				
 				PowerPanel.Diag.Step := tpREADY;
@@ -424,7 +428,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-			// Wait for data to sink in
+			// Wait for data to arrive
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 		tpWRITE_WAIT:
 			fbWaitAfterWrite.IN := TRUE;
@@ -435,8 +439,10 @@ PROGRAM _CYCLIC
 				fbWaitAfterWrite();
 				
 				// Create variable shadow for write variables
-				FOR i := 0 TO VariablesWriteIndex - 1 DO
-					brsmemcpy(VariablesWriteInfo[i].AdrShadow, VariablesWriteInfo[i].Adr, VariablesWriteInfo[i].DataLen);
+				FOR i := 0 TO VariablesIndex - 1 DO
+					IF VariablesInfo[i].Writable THEN
+						brsmemcpy(VariablesInfo[i].AdrShadow, VariablesInfo[i].Adr, VariablesInfo[i].DataLen);
+					END_IF
 				END_FOR
 				
 				// Reset command and flag
@@ -537,7 +543,7 @@ PROGRAM _CYCLIC
 			// Set parameters for function call
 			fbMonitoredItemRemoveList.Execute := TRUE;
 			fbMonitoredItemRemoveList.SubscriptionHdl := fbSubscriptionCreate.SubscriptionHdl;
-			fbMonitoredItemRemoveList.MonitoredItemHdlCount := VariablesReadIndex;
+			fbMonitoredItemRemoveList.MonitoredItemHdlCount := VariablesIndex;
 			fbMonitoredItemRemoveList.MonitoredItemHdls := fbMonitoredItemAddList.MonitoredItemHdls;
 			fbMonitoredItemRemoveList.Timeout := T#10s;
 			
@@ -590,7 +596,7 @@ PROGRAM _CYCLIC
 			fbNodeReleaseHandleList.Execute := TRUE;
 			fbNodeReleaseHandleList.ConnectionHdl := fbConnect.ConnectionHdl;
 			fbNodeReleaseHandleList.NodeHdls := fbNodeGetHandleList.NodeHdls;
-			fbNodeReleaseHandleList.NodeHdlCount := VariablesReadIndex;
+			fbNodeReleaseHandleList.NodeHdlCount := VariablesIndex;
 			fbNodeReleaseHandleList.Timeout := T#10s;
 			
 			// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -625,6 +631,7 @@ PROGRAM _CYCLIC
 
 				brsmemset(ADR(PowerPanel.Data), 0, SIZEOF(PowerPanel.Data));
 				PowerPanel.Command.Disconnect := FALSE;
+				PowerPanel.Command.Write := FALSE;
 				PowerPanel.Diag.IsConnected := FALSE;
 				fbDisconnect.Execute := FALSE;
 
@@ -651,6 +658,7 @@ PROGRAM _CYCLIC
 				PowerPanel.Diag.StatusId := 0;
 				PowerPanel.Diag.StatusText := '';
 				PowerPanel.Method.Type := NoMethod;
+				PowerPanel.Command.Write := FALSE;
 				PowerPanel.Command.ResetError := FALSE;
 				
 				IF PowerPanel.Diag.IsConnected THEN
