@@ -33,5 +33,5 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
 
-repo_url: https://br-automation-community.github.io/mappPanel/
+repo_url: https://github.com/br-automation-community/mappPanel
 repo_name: GitHub Repo
