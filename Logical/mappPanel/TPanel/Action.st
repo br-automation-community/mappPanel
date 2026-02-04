@@ -1,43 +1,27 @@
-ACTION DefineVariablesRead:
+ACTION DefineVariables:
 	IF (fbGetBrowsePath.status = ERR_OK) THEN
 		j := 0;
+		brsmemset(ADR(VariablesInfo), 0, SIZEOF(VariablesInfo));
 		FOR i := 0 TO VariablesTotalIndex - 1 DO
 			pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (i * SIZEOF(pBrowseVar)));			
 			IF (pBrowseVar.Identifier <> '') AND (pBrowseVar.Access <> 'M') THEN
+				IF (j > INDEX_LIST) THEN
+					PowerPanel.Diag.StatusId := ERR_PANEL_INDEX_EXCEEDED;
+					PowerPanel.Diag.StatusText := 'Maximum number of variables subscription reached (64)';
+					EXIT;
+				END_IF		
 				UANodeIDMonitor[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
 				UANodeIDMonitor[j].IdentifierType := UAIdentifierType_Numeric;
 				UANodeIDMonitor[j].Identifier := pBrowseVar.Identifier;
-				VariablesReadInfo[j] := '::';
-				VariablesReadInfo[j] := CONCAT(VariablesReadInfo[j], TaskName);
-				VariablesReadInfo[j] := CONCAT(VariablesReadInfo[j], ':');
-				VariablesReadInfo[j] := CONCAT(VariablesReadInfo[j], pBrowseVar.VariableName);
-				j := j + 1;
-			END_IF
-			IF (j > INDEX_LIST) THEN
-				EXIT;
-			END_IF		
-		END_FOR
-		IF j > 0 THEN
-			VariablesReadIndex := j - 1;
-		END_IF
-	END_IF
-END_ACTION
-
-ACTION DefineVariablesWrite:
-	DataShadow;
-	IF (fbGetBrowsePath.status = ERR_OK) THEN
-		j := 0;
-		FOR i := 0 TO VariablesTotalIndex - 1 DO
-			pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (i * SIZEOF(pBrowseVar)));
-			IF (pBrowseVar.Identifier <> '') AND (pBrowseVar.Access = 'W') THEN
-				// Get variable details
-				VariablesWriteInfo[j].ObjectIndex := i;				
 				
-				VariableName := '::';
-				VariableName := CONCAT(VariableName, TaskName);
-				VariableName := CONCAT(VariableName, ':');
-				VariableName := CONCAT(VariableName, pBrowseVar.VariableName);		
-				VariableStatus := PV_xgetadr(ADR(VariableName), ADR(VariablesWriteInfo[j].Adr), ADR(VariablesWriteInfo[j].DataLen));
+				VariablesInfo[j].ObjectIndex := i;	
+				
+				VariablesInfo[j].Name := '::';
+				VariablesInfo[j].Name := CONCAT(VariablesInfo[j].Name, TaskName);
+				VariablesInfo[j].Name := CONCAT(VariablesInfo[j].Name, ':');
+				VariablesInfo[j].Name := CONCAT(VariablesInfo[j].Name, pBrowseVar.VariableName);
+				
+				VariableStatus := PV_xgetadr(ADR(VariablesInfo[j].Name), ADR(VariablesInfo[j].Adr), ADR(VariablesInfo[j].DataLen));
 				
 				// Make sure variable exists
 				IF VariableStatus = 0 THEN
@@ -45,7 +29,11 @@ ACTION DefineVariablesWrite:
 					VariableName := CONCAT(VariableName, TaskName);
 					VariableName := CONCAT(VariableName, ':');
 					VariableName := CONCAT(VariableName, REPLACE(pBrowseVar.VariableName, 'DataShadow', 15, 1));		
-					VariableStatus := PV_xgetadr(ADR(VariableName), ADR(VariablesWriteInfo[j].AdrShadow), ADR(VariablesWriteInfo[j].DataLen));
+					VariableStatus := PV_xgetadr(ADR(VariableName), ADR(VariablesInfo[j].AdrShadow), ADR(VariablesInfo[j].DataLen));
+					
+					IF (pBrowseVar.Access = 'W') THEN
+						VariablesInfo[j].Writable := TRUE;
+					END_IF
 
 					j := j + 1;
 				ELSE
@@ -55,12 +43,13 @@ ACTION DefineVariablesWrite:
 				END_IF
 				
 			END_IF
-			IF (j > INDEX_LIST) THEN
-				EXIT;
-			END_IF				
 		END_FOR
-
-		VariablesWriteIndex := j;
+		IF j > 0 THEN
+			VariablesIndex := j - 1;
+			FOR i := 0 TO VariablesIndex DO
+				VariablesReadInfo[i] := VariablesInfo[i].Name;
+			END_FOR
+		END_IF
 	END_IF
 END_ACTION
 
@@ -71,21 +60,23 @@ ACTION CheckValueChange:
 		j := 0;
 		brsmemset(ADR(VariablesChanged), 0 , SIZEOF(VariablesChanged));
 		
-		FOR i := 0 TO VariablesWriteIndex - 1 DO
-			IF brsmemcmp(VariablesWriteInfo[i].Adr, VariablesWriteInfo[i].AdrShadow, VariablesWriteInfo[i].DataLen) <> 0 THEN
-				pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (VariablesWriteInfo[i].ObjectIndex * SIZEOF(pBrowseVar)));		
-				UANodeIDWrite[j].Identifier := pBrowseVar.Identifier;
-				UANodeIDWrite[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
-				UANodeIDWrite[j].IdentifierType := UAIdentifierType_Numeric;
-				VariablesChanged[j] := VariablesReadInfo[VariablesWriteInfo[i].ObjectIndex];
-				
-				PowerPanel.Diag.PendingWrites := TRUE;
-
-				j := j + 1;
-				IF (j > INDEX_LIST) THEN
-					EXIT;
-				END_IF
-			END_IF		
+		FOR i := 0 TO VariablesIndex - 1 DO
+			IF VariablesInfo[i].Writable THEN
+				IF brsmemcmp(VariablesInfo[i].Adr, VariablesInfo[i].AdrShadow, VariablesInfo[i].DataLen) <> 0 THEN
+					pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (VariablesInfo[i].ObjectIndex * SIZEOF(pBrowseVar)));		
+					UANodeIDWrite[j].Identifier := pBrowseVar.Identifier;
+					UANodeIDWrite[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
+					UANodeIDWrite[j].IdentifierType := UAIdentifierType_Numeric;
+					VariablesChanged[j] := VariablesInfo[i].Name;
+					
+					PowerPanel.Diag.PendingWrites := TRUE;
+	
+					j := j + 1;
+					IF (j > INDEX_LIST) THEN
+						EXIT;
+					END_IF
+				END_IF		
+			END_IF	
 		END_FOR
 	
 		VariablesChangeIndex := j;
@@ -195,29 +186,31 @@ END_ACTION
 ACTION CheckPing:
 	// Trigger ping request
 	PingTimer.IN := TRUE;
-	PingTimer.PT := PING_TIMEOUT;
+	PingTimer.PT := PING_TIMEOUT/10;
 	PingTimer();
 	
-	IcmpPing_0(enable := 1, pHost := ADR(PowerPanel.Parameter.PanelIP), timeout := PING_TIMEOUT);
+	IF PingTimer.Q THEN
+		IcmpPing_0(enable := 1, pHost := ADR(PowerPanel.Parameter.PanelIP), timeout := PING_TIMEOUT);
 
-	// Ping was OK
-	IF(IcmpPing_0.status = ERR_OK) THEN
-		PingTimer(IN := FALSE);
-		PowerPanel.Diag.PingOk := TRUE;
-	
-	// Disconnect from share when ping failed
-	ELSIF(IcmpPing_0.status <> ERR_FUB_BUSY) THEN
-		PingTimer(IN := FALSE);
-		PowerPanel.Diag.PingOk := FALSE;
+		// Ping was OK
+		IF(IcmpPing_0.status = ERR_OK) THEN
+			PingTimer(IN := FALSE);
+			PowerPanel.Diag.PingOk := TRUE;
 		
-		// Go to error state when connected
-		IF PowerPanel.Diag.IsConnected THEN
-			PowerPanel.Diag.IsConnected := FALSE;
+		// Disconnect from share when ping failed
+		ELSIF(IcmpPing_0.status <> ERR_FUB_BUSY) THEN
+			PingTimer(IN := FALSE);
+			PowerPanel.Diag.PingOk := FALSE;
 			
-			PowerPanel.Diag.StatusId := ERR_PANEL_CONNECTION_LOST;
-			PowerPanel.Diag.ErrorStep := PowerPanel.Diag.Step;
-			PowerPanel.Diag.StatusText := 'Connection is lost';
-			PowerPanel.Diag.Step := tpERROR;
+			// Go to error state when connected
+			IF PowerPanel.Diag.IsConnected THEN
+				PowerPanel.Diag.IsConnected := FALSE;
+				
+				PowerPanel.Diag.StatusId := ERR_PANEL_CONNECTION_LOST;
+				PowerPanel.Diag.ErrorStep := PowerPanel.Diag.Step;
+				PowerPanel.Diag.StatusText := 'Connection is lost';
+				PowerPanel.Diag.Step := tpERROR;
+			END_IF
 		END_IF
 	END_IF
 END_ACTION

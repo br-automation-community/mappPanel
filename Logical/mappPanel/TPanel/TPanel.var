@@ -15,12 +15,13 @@ VAR CONSTANT
 	ERR_PANEL_FIRST_READ : DWORD := 10003; (*First read timed out*)
 	ERR_PANEL_CONNECTION_LOST : DWORD := 10004; (*Connection to panel was interrupted*)
 	ERR_PANEL_METHOD_NOT_FOUND : DWORD := 10005; (*The method does not exist on the corresponding panel*)
+	ERR_PANEL_INDEX_EXCEEDED : DWORD := 10006; (*Maximum number of variables subscription reached (64)*)
 END_VAR
 (*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
 (*Local constants*)
 (*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
 VAR
-	PING_TIMEOUT : UINT := 5000; (*Timeout for ping response*)
+	PING_TIMEOUT : UINT := 2000; (*Timeout for ping response*)
 END_VAR
 VAR CONSTANT
 	INDEX_LIST : USINT := MAX_ELEMENTS_NODELIST-1;
@@ -51,11 +52,10 @@ VAR
 	ValuesChanged : ARRAY[0..INDEX_LIST] OF BOOL;
 	VariablesReadInfo : ARRAY[0..INDEX_LIST] OF STRING[MAX_LENGTH_VARIABLE];
 	VariablesTotalIndex : INT := 0;
-	VariablesReadIndex : INT := 0;
-	VariablesWriteIndex : INT := 0;
+	VariablesIndex : INT := 0;
 	VariablesChanged : ARRAY[0..INDEX_LIST] OF STRING[MAX_LENGTH_VARIABLE];
 	VariablesChangeIndex : INT := 0;
-	VariablesWriteInfo : ARRAY[0..INDEX_LIST] OF PvType;
+	VariablesInfo : ARRAY[0..INDEX_LIST] OF PvType;
 	DataShadow : PowerPanelDataType;
 	i : INT := 0;
 	j : INT;
