@@ -16,6 +16,14 @@ Kudos to Corne who provided the base for this sample!
 
 Here are some notes for supported OPC UA tags by panel and version. This list may not be complete. See the panel documentation for more details.
 
+#### Firmware 1.8.0
+
+The following new parameters were introduced with PPT system version 1.7.0
+
+Gesture -> RestartSystem
+Web -> SynchronizeTimeWithWebServer
+Web -> NtpSyncTimeout
+
 #### Firmware 1.7.0
 
 The following new parameters were introduced with PPT system version 1.7.0
