@@ -158,7 +158,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/br-automation-community/mappPanel" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/br-automation-com/mappPanel" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -205,7 +205,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/br-automation-community/mappPanel" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/br-automation-com/mappPanel" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -340,9 +340,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#remote-access" class="md-nav__link">
+  <a href="#firmware-170" class="md-nav__link">
     <span class="md-ellipsis">
-      Remote Access
+      Firmware 1.7.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-160" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firmware 1.6.0
     </span>
   </a>
   
@@ -498,7 +507,12 @@
 <p><a href="https://www.br-automation.com/en/downloads/industrial-pcs-and-panels/power-panel-t-c-series/power-panel-t30/power-panel-t30-users-manual/">T30 documentation</a></p>
 <h3 id="supported-opc-ua-tag-notes">Supported OPC UA tag notes</h3>
 <p>Here are some notes for supported OPC UA tags by panel and version. This list may not be complete. See the panel documentation for more details.</p>
-<h4 id="remote-access">Remote Access</h4>
+<h4 id="firmware-170">Firmware 1.7.0</h4>
+<p>The following new parameters were introduced with PPT system version 1.7.0</p>
+<ul>
+<li>Web: WaitForSync</li>
+</ul>
+<h4 id="firmware-160">Firmware 1.6.0</h4>
 <p>Changed parameter names starting with PPT system version 1.6.0
 The mode and port settings for VNC and WebGL can be set separately starting with this PPT system version:</p>
 <table>
@@ -507,6 +521,7 @@ The mode and port settings for VNC and WebGL can be set separately starting with
 <th>Parameter name</th>
 <th>&lt;1.6.0</th>
 <th>&gt;=1.6.0</th>
+<th>&gt;=1.8.0</th>
 </tr>
 </thead>
 <tbody>
@@ -514,39 +529,69 @@ The mode and port settings for VNC and WebGL can be set separately starting with
 <td>RemoteAccessMode</td>
 <td>x</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>RemoteAccessModeWebGL</td>
 <td></td>
 <td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>RemoteAccessModeVNC</td>
 <td></td>
 <td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>RemoteAccessPort</td>
 <td>x</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>RemoteAccessPortWebGL</td>
 <td></td>
 <td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>RemoteAccessWSPortWebGL</td>
 <td></td>
 <td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>RemoteAccessPortVNC</td>
 <td></td>
 <td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Gesture-&gt;RestartSystem</td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>Web-&gt;SynchronizeTimeWithWebServer</td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>Web-&gt;NtpSyncTimeout</td>
+<td></td>
+<td></td>
+<td>x</td>
 </tr>
 </tbody>
 </table>
+<p>The following new parameters were introduced with PPT system version 1.7.0</p>
+<ul>
+<li>Web: Enable screen capture</li>
+<li>Web: Suppress screen capture security warning</li>
+</ul>
 <h4 id="methods">Methods</h4>
 <table>
 <thead>
