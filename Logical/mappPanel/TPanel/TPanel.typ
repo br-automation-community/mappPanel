@@ -93,6 +93,9 @@ TYPE
 	TimeType : 	STRUCT 
 		EnableNTPClient : BOOL;
 		NTPServer1 : STRING[79];
+		NTPServer2 : STRING[79];
+		NTPServer3 : STRING[79];
+		NTPServer4 : STRING[79];
 		CurrentDateTime : DATE_AND_TIME;
 	END_STRUCT;
 	ScreenType : 	STRUCT 
@@ -113,6 +116,7 @@ TYPE
 	END_STRUCT;
 	GestureType : 	STRUCT 
 		OpenServicePage : BOOL;
+		RestartSystem : BOOL;
 	END_STRUCT;
 	DiagnosticsType : 	STRUCT 
 		CPUCore0Usage : USINT;
@@ -132,11 +136,14 @@ TYPE
 		WebServer : STRING[79];
 		VirtualKeyboardWeb : BOOL;
 		DisablePinchGesture : BOOL;
+		DisableGPU : BOOL;
 		SetOverrideViewport : BOOL;
 		ViewportSettings : STRING[79];
 		IgnoreServerCertificateErrors : BOOL;
 		EnableScreenCapture : BOOL;
 		SuppressScrnCaptSecWarn : BOOL;
+		WaitForNtpSync : BOOL;
+		NtpSyncTimeout : UINT;
 	END_STRUCT;
 	StorageType : 	STRUCT 
 		USBMemoryShare : BOOL;

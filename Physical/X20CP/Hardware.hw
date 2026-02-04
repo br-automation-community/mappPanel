@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio WorkingVersion="6.1" FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="6PPT80.156B-10A" Type="6PPT80.156B-10A" Version="1.1.1.0">
@@ -9,6 +9,7 @@
     <Parameter ID="PasswordVNC" Value="" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />
+    <Parameter ID="TerminalImage" Value="PPT_80_V1.7.0" />
   </Module>
   <Module Name="X20CP3687X" Type="X20CP3687X" Version="1.8.2.0">
     <Connector Name="IF1">
@@ -20,6 +21,7 @@
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
     <Parameter ID="ConfigurationID" Value="mappViewSample_Config1" />
+    <Parameter ID="UserPartitionSize" Value="300" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="USER" />
     <Parameter ID="FileDevicePath1" Value="USER_PATH" />
