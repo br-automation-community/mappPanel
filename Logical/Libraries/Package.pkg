@@ -10,9 +10,9 @@
     <Object Type="Library" Language="binary" Description="The SYS_LIB library contains functions for memory management and operating system manipulation as well as hardware-specific functions.">sys_lib</Object>
     <Object Type="Library" Language="binary" Description="This library contains standard function blocks and functions for IEC 61131-3.">standard</Object>
     <Object Type="Library" Language="binary" Description="The DataObj library can be used to dynamically create, dynamically delete and copy data objects, etc. ">DataObj</Object>
-    <Object Type="Library" Language="binary" Description="The AsOpcUac library supports communication with OPC-UA servers">AsOpcUac</Object>
-    <Object Type="Library" Language="binary" Description="The AsOpcUas library provides interfaces to the OPC-UA server">AsOpcUas</Object>
     <Object Type="Library" Language="IEC">IecCheck</Object>
     <Object Type="Library" Language="binary" Description="This library contains FBKs for pinging a station.">AsICMP</Object>
+    <Object Type="Library" Language="binary" Description="The AsOpcUac library provides function blocks for communication with an OPC UA Server">AsOpcUac</Object>
+    <Object Type="Library" Language="binary" Description="The AsOpcUas library provides function blocks for handling OPC UA Server functionality">AsOpcUas</Object>
   </Objects>
 </Package>

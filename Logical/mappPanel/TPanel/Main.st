@@ -275,7 +275,7 @@ PROGRAM _CYCLIC
 				FOR i := 0 TO VariablesIndex DO
 					IF fbMonitoredItemAddList.NodeErrorIDs[i] <> 0 THEN
 						PowerPanel.Diag.StatusId := fbMonitoredItemAddList.NodeErrorIDs[i];
-						PowerPanel.Diag.StatusText := VariablesInfo[i].Name;
+						PowerPanel.Diag.StatusText := VariablesReadInfo[i].Values;
 					END_IF
 				END_FOR
 				
@@ -320,7 +320,7 @@ PROGRAM _CYCLIC
 				FOR i := 0 TO VariablesIndex DO
 					IF fbMonitoredItemAddList.NodeErrorIDs[i] <> 0 THEN
 						PowerPanel.Diag.StatusId := fbMonitoredItemAddList.NodeErrorIDs[i];
-						PowerPanel.Diag.StatusText := VariablesInfo[i].Name;
+						PowerPanel.Diag.StatusText := VariablesReadInfo[i].Values;
 					END_IF
 				END_FOR
 				

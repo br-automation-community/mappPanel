@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio WorkingVersion="6.1" FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
-  <Module Name="6PPT80.156B-10A" Type="6PPT80.156B-10A" Version="1.1.1.0">
+  <Module Name="6PPT80.156B-10A" Type="6PPT80.156B-10A" Version="1.1.2.0">
     <Connection Connector="ETH1" TargetModule="X20CP3687X" TargetConnector="IF2">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
@@ -9,9 +9,8 @@
     <Parameter ID="PasswordVNC" Value="" />
     <Parameter ID="PasswordCIFS" Value="" />
     <Parameter ID="PasswordService" Value="" />
-    <Parameter ID="TerminalImage" Value="PPT_80_V1.7.0" />
   </Module>
-  <Module Name="X20CP3687X" Type="X20CP3687X" Version="1.8.2.0">
+  <Module Name="X20CP3687X" Type="X20CP3687X" Version="1.9.0.0">
     <Connector Name="IF1">
       <Parameter ID="ActivateIna" Value="0" />
     </Connector>
@@ -27,6 +26,12 @@
     <Parameter ID="FileDevicePath1" Value="USER_PATH" />
     <Parameter ID="ActivateSntpServer" Value="1" />
     <Parameter ID="ActivateFtpServer" Value="1" />
+    <Parameter ID="FTPProtocol" Value="1" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="admin" />
+    <Parameter ID="FtpUserPassword1" Value="lV3kuVRIcI78BOemT3dfs29icK+tno+Yk4l7P43PXN8=" Description="admin" />
+    <Parameter ID="FtpUserSalt1" Value="Gu4C6MZO" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
     <Parameter ID="ActivateWebServer" Value="1" />
     <Parameter ID="ActivateSdm" Value="1" />
   </Module>

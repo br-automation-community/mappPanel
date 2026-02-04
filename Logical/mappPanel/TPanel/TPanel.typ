@@ -201,7 +201,6 @@ TYPE
 		SetTime
 		);
 	PvType : 	STRUCT 
-		Name : STRING[MAX_LENGTH_VARIABLE];
 		Writable : BOOL;
 		ObjectIndex : INT;
 		Adr : UDINT;

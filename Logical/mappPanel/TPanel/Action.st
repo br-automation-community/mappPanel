@@ -10,18 +10,31 @@ ACTION DefineVariables:
 					PowerPanel.Diag.StatusText := 'Maximum number of variables subscription reached (64)';
 					EXIT;
 				END_IF		
+				brsitoa(j, ADR(TmpStr));
 				UANodeIDMonitor[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
 				UANodeIDMonitor[j].IdentifierType := UAIT_Numeric;
 				UANodeIDMonitor[j].Identifier := pBrowseVar.Identifier;
 				
-				VariablesInfo[j].ObjectIndex := i;	
+				VariablesInfo[j].ObjectIndex := i;
+
+				VariablesReadInfo[j].Values := '::';
+				VariablesReadInfo[j].Values := CONCAT(VariablesReadInfo[j].Values, TaskName);
+				VariablesReadInfo[j].Values := CONCAT(VariablesReadInfo[j].Values, ':');
+				VariablesReadInfo[j].Values := CONCAT(VariablesReadInfo[j].Values, pBrowseVar.VariableName);
+
+				VariablesReadInfo[j].TimeStamps := '::';
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, TaskName);
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, ':TimeStamps[');
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, TmpStr);
+				VariablesReadInfo[j].TimeStamps := CONCAT(VariablesReadInfo[j].TimeStamps, ']');
+
+				VariablesReadInfo[j].NodeQualityIDs := '::';
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, TaskName);
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, ':NodeQualityIDs[');
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, TmpStr);
+				VariablesReadInfo[j].NodeQualityIDs := CONCAT(VariablesReadInfo[j].NodeQualityIDs, ']');
 				
-				VariablesInfo[j].Name := '::';
-				VariablesInfo[j].Name := CONCAT(VariablesInfo[j].Name, TaskName);
-				VariablesInfo[j].Name := CONCAT(VariablesInfo[j].Name, ':');
-				VariablesInfo[j].Name := CONCAT(VariablesInfo[j].Name, pBrowseVar.VariableName);
-				
-				VariableStatus := PV_xgetadr(ADR(VariablesInfo[j].Name), ADR(VariablesInfo[j].Adr), ADR(VariablesInfo[j].DataLen));
+				VariableStatus := PV_xgetadr(ADR(VariablesReadInfo[j].Values), ADR(VariablesInfo[j].Adr), ADR(VariablesInfo[j].DataLen));
 				
 				// Make sure variable exists
 				IF VariableStatus = 0 THEN
@@ -46,9 +59,6 @@ ACTION DefineVariables:
 		END_FOR
 		IF j > 0 THEN
 			VariablesIndex := j - 1;
-			FOR i := 0 TO VariablesIndex DO
-				VariablesReadInfo[i] := VariablesInfo[i].Name;
-			END_FOR
 		END_IF
 	END_IF
 END_ACTION
@@ -66,8 +76,8 @@ ACTION CheckValueChange:
 					pBrowseVar ACCESS (fbGetBrowsePath.pDatObjMem + (VariablesInfo[i].ObjectIndex * SIZEOF(pBrowseVar)));		
 					UANodeIDWrite[j].Identifier := pBrowseVar.Identifier;
 					UANodeIDWrite[j].NamespaceIndex := pBrowseVar.NamespaceIndex;
-					UANodeIDWrite[j].IdentifierType := UAIdentifierType_Numeric;
-					VariablesChanged[j] := VariablesInfo[i].Name;
+					UANodeIDWrite[j].IdentifierType := UAIT_Numeric;
+					VariablesChanged[j] := VariablesReadInfo[i].Values;
 					
 					PowerPanel.Diag.PendingWrites := TRUE;
 	
