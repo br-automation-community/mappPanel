@@ -27,15 +27,18 @@ The following new parameters were introduced with PPT system version 1.7.0
 Changed parameter names starting with PPT system version 1.6.0
 The mode and port settings for VNC and WebGL can be set separately starting with this PPT system version:
 
-|Parameter name|<1.6.0|>=1.6.0|
-|---|---|---|
+|Parameter name|<1.6.0|>=1.6.0|>=1.8.0|
+|---|---|---|---|
 |RemoteAccessMode| x||
-|RemoteAccessModeWebGL|| x|
-|RemoteAccessModeVNC|| x|
+|RemoteAccessModeWebGL|| x||
+|RemoteAccessModeVNC|| x||
 |RemoteAccessPort| x||
-|RemoteAccessPortWebGL|| x|
-|RemoteAccessWSPortWebGL|| x|
-|RemoteAccessPortVNC|| x|
+|RemoteAccessPortWebGL|| x||
+|RemoteAccessWSPortWebGL|| x||
+|RemoteAccessPortVNC||x||
+|Gesture->RestartSystem|||x|
+|Web->SynchronizeTimeWithWebServer|||x|
+|Web->NtpSyncTimeout|||x|
 
 The following new parameters were introduced with PPT system version 1.7.0
 

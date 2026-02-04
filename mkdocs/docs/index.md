@@ -8,7 +8,7 @@ This is a sample for communication from a B&R PLC to a T-Panel over OPC UA. You 
 
 The sample was developed with Automation Studio 4.12 and panel firmware 1.7.0. but may also work with versions below that.
 
-* Automation Studio 4.12
+* Automation Studio 6.5
 * Panel firmware 1.7.0
 
 ## Getting started
