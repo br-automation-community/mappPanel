@@ -1,3 +1,10 @@
+04.02.2026
+- Improves subscription handling by limiting the number of variables.
+- Consolidates read and write variable definitions for better efficiency.
+- Refines ping timer accuracy for connection loss detection.
+- Add additional tags for firmware 1.8.0
+- Update mapp versions
+
 10.04.2025
 - Fixed web address does not allow certain characters
 - Fixed disconnect does not work when panel lost connection
