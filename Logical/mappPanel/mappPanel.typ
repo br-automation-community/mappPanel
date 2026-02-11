@@ -1,6 +1,6 @@
 
 TYPE
-	StepEnum : 
+	mappPanelStepEnum : 
 		(
 		tpWAIT,
 		tpCONNECT,
@@ -61,14 +61,14 @@ TYPE
 		PingOk : BOOL;
 		IsConnected : BOOL;
 		PendingWrites : BOOL;
-		Step : StepEnum;
+		Step : mappPanelStepEnum;
 		StatusText : STRING[200];
 		StatusId : DWORD;
 		VariableErrors : ARRAY[0..9]OF STRING[200];
 		VariableErrorsIndex : USINT;
 		VisHelperConnectVisible : BOOL;
 		VisHelperErrorVisible : BOOL;
-		ErrorStep : StepEnum := tpNONE;
+		ErrorStep : mappPanelStepEnum := (0);
 	END_STRUCT;
 	StartupType : 	STRUCT 
 		StartMode : UDINT;
