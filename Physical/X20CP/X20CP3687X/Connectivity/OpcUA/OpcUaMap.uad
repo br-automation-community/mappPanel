@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
-<OpcUaSource FileVersion="9" ArVersion="M4.93">
+<OpcUaSource FileVersion="9" ArVersion="Q4.93">
   <Aliases>
     <ACLAliases>
       <ACL Id="1">
@@ -18,13 +18,14 @@
   </Aliases>
   <DefaultView AclId="3">
     <Module Name="&lt;Default&gt;">
-      <Task Name="TPanel">
+      <GlobalVariables Name="Global Variables">
         <Variable Name="PowerPanel" RecursiveEnable="2">
           <Variable Name="Diag">
             <Variable Name="VariableErrors" RecursiveEnable="2" />
           </Variable>
         </Variable>
-      </Task>
+      </GlobalVariables>
+      <Task Name="TPanel" />
     </Module>
   </DefaultView>
 </OpcUaSource>

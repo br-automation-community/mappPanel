@@ -5,7 +5,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentTPanel" widgetRefId="btnPanelConnect" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TPanel:PowerPanel.Command.Connect">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:PowerPanel.Command.Connect">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -15,7 +15,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentTPanel" widgetRefId="btnDbDisconnect" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TPanel:PowerPanel.Command.Disconnect">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:PowerPanel.Command.Disconnect">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -25,7 +25,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentTPanel" widgetRefId="btnPanelWrite" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TPanel:PowerPanel.Command.Write">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:PowerPanel.Command.Write">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
@@ -35,7 +35,7 @@
       <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentTPanel" widgetRefId="btnPanelResetError" event="Click" />
       <EventHandler>
         <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::TPanel:PowerPanel.Command.ResetError">
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:PowerPanel.Command.ResetError">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>
