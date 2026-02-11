@@ -8,12 +8,13 @@
     <EngineeringUnitAliases />
   </Aliases>
   <Module Name="&lt;Default&gt;">
-    <Task Name="TPanel">
+    <GlobalVariables Name="Global Variables">
       <Variable Name="PowerPanel" RecursiveEnable="2">
         <Variable Name="Diag">
           <Variable Name="VariableErrors" RecursiveEnable="2" />
         </Variable>
       </Variable>
-    </Task>
+    </GlobalVariables>
+    <Task Name="TPanel" />
   </Module>
 </OpcUaSource>

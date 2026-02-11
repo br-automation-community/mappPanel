@@ -13,7 +13,6 @@ END_VAR
 VAR
 	Manufacturer : UALocalizedText;
 	Model : UALocalizedText;
-	PowerPanel : PowerPanelType;
 	BrowseVar : {REDUND_UNREPLICABLE} BrowseType;
 	pBrowseVar : REFERENCE TO BrowseType;
 	TaskName : STRING[19];

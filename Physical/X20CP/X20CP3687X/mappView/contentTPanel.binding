@@ -1,434 +1,435 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="contentTPanel_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Bindings>
+		
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.ProductCode" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numProductCode" attribute="value" />
-		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.SerialNumber" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.SerialNumber" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSerialNumber" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.HardwareRevision" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.HardwareRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtHardwareRevision" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.DeviceRevision" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.DeviceRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtDeviceRevision" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.RevisionCounter" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.RevisionCounter" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numRevisionCounter" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.SoftwareRevision" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.SoftwareRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSoftwareRevision" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Startup.StartMode" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Startup.StartMode" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbStartupMode" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Startup.ShowBootLogoVNC" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Startup.ShowBootLogoVNC" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglBootLogoVNC" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Startup.ShowBootLogoWeb" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Startup.ShowBootLogoWeb" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglShowWebLogo" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.Hostname" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.Hostname" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtHostname" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.ActivateDNS" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.ActivateDNS" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglUseDns" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.PrimaryDNS" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.PrimaryDNS" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtPrimaryDns" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.DNSSuffix" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.DNSSuffix" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtDnsSuffix" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.GetDNSFromDHCP" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.GetDNSFromDHCP" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglGetDnsFromDhcp" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.SecondaryDNS" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.SecondaryDNS" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSecondaryDns" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.IpAddress" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.IpAddress" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtIpAddress" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.SubnetMask" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.SubnetMask" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSubnetMask" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.DefaultGateway" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.DefaultGateway" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtDefaultGateway" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.EnableNTPClient" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Time.EnableNTPClient" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglNtpServer" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tabTPanel" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.PingOk" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.PingOk" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="StatusPing" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="StatusInitialized" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.StatusId" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.StatusId" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numPanelStatusNo" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="btnDbDisconnect" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.StatusText" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.StatusText" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtPanelStatusText" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="PendingWrites" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.PendingWrites" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.PendingWrites" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="PendingWrites" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.PingOk" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.PingOk" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="StatusInitialized" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.PendingWrites" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.PendingWrites" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="btnPanelWrite" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbStartupMode1" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="labExecuteMethod" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Method.Type" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Method.Type" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbStartupMode1" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.ScreenRotation" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.ScreenRotation" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbScreenRotation" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglScreensaver" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.DisplayBrightness" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.DisplayBrightness" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numScreenBirghtness" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.ScreensaverIdleTime" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.ScreensaverIdleTime" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numScreensaverTime" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="labScreensaverTime" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numScreensaverTime" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.ScreensaverType" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.ScreensaverType" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbScreensaverType" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="labScreensaverType" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.EnableScreensaver" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbScreensaverType" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Parameter.PanelType" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Parameter.PanelType" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtPanelType" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Parameter.PanelIP" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Parameter.PanelIP" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtPanelIpAddress" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Method.BuzzerFrequency" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Method.BuzzerFrequency" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMethodBuzzerFrequency" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Method.BuzzerDuration" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Method.BuzzerDuration" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMethodBuzzerDuration" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Method.Brightness" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Method.Brightness" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMethodBrightness" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMethodBuzzerDuration" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="labMethodBuzzerFrequency" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="labMethodBrightness" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="labMethodBuzzerDuration" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMethodBuzzerFrequency" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.IsConnected" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.IsConnected" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMethodBrightness" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Audio.BuzzerFrequency" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Audio.BuzzerFrequency" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBuzzerFrequency" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Audio.BuzzerDuration" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Audio.BuzzerDuration" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBuzzerDuration" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Audio.BuzzerSource" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Audio.BuzzerSource" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbBuzzerSource" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Audio.EnableBuzzer" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Audio.EnableBuzzer" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglBuzzer" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.VNCLocalWindowScaling" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Vnc.VNCLocalWindowScaling" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglVncScaling" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.UseRfbExtension" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Vnc.UseRfbExtension" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglVncRfB" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.VNCServer" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Vnc.VNCServer" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtIVncIp" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.DisablePinchGesture" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.DisablePinchGesture" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglPinGesture" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.VirtualKeyboardWeb" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.VirtualKeyboardWeb" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglVirtualKeyboard" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.WebServer" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.WebServer" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtIWebIp" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Storage.UserMemoryShare" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Storage.UserMemoryShare" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglShareUser" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Storage.USBMemoryShare" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Storage.USBMemoryShare" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglShareUsb" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Diagnostics.MemoryTotal" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Diagnostics.MemoryTotal" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMemoryTotal" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Diagnostics.MemoryAvailable" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Diagnostics.MemoryAvailable" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numMemoryAvailable" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Diagnostics.CPUUsage" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Diagnostics.CPUUsage" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numCpuUsage" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Diagnostics.CPUCore1Usage" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Diagnostics.CPUCore1Usage" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numCpu2Usage" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Diagnostics.CPUCore0Usage" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Diagnostics.CPUCore0Usage" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numCpu1Usage" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Status.USBFlashDrive1" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Status.USBFlashDrive1" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numUsbFlash2" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Status.USBFlashDrive0" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Status.USBFlashDrive0" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numUsbFlash1" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Status.Temperature1" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Status.Temperature1" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numTemperature2" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Status.Temperature0" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Status.Temperature0" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numTemperature1" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.CurrentDateTime" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Time.CurrentDateTime" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="dtNtpCurrentTime" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.RemoteAccessBackEnd" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.RemoteAccessBackEnd" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbBackendType" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.EnableRemoteAccess" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.EnableRemoteAccess" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglRemoteAccess" attribute="value" />
 		</Binding>
 		
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.RemoteAccessPortWebGL" attribute="node" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.RemoteAccessPortWebGL" attribute="node" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numRemotePortWebGL" attribute="node" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.RemoteAccessWSPortWebGL" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.RemoteAccessWSPortWebGL" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numRemotePortWebWs" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.RemoteAccessPortVNC" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.RemoteAccessPortVNC" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numRemotePortVnc" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[1]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[1]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError1" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[0]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[0]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError0" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[2]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[2]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError2" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[3]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[3]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError3" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[4]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[4]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError4" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[9]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[9]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError9" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[8]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[8]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError8" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[7]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[7]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError7" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[6]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[6]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError6" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VariableErrors[5]" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VariableErrors[5]" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtVariableError5" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.RemoteAccessModeWebGL" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.RemoteAccessModeWebGL" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbAccessControlWebGL" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.RemoteAccess.RemoteAccessModeVNC" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.RemoteAccess.RemoteAccessModeVNC" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbAccessControlVnc" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Network.NetworkMode" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Network.NetworkMode" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="ddbNetworkMode" attribute="selectedIndex" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VisHelperConnectVisible" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VisHelperConnectVisible" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="btnPanelConnect" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Diag.VisHelperErrorVisible" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Diag.VisHelperErrorVisible" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="btnPanelResetError" attribute="visible" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.AboutInfo.Model" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.Model" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtModelNumber" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Screen.BootAnimationDelay" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Screen.BootAnimationDelay" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numBootAnimationDelay" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.SuppressScrnCaptSecWarn" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.SuppressScrnCaptSecWarn" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglSuppressScrnCaptSecWarn" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.EnableScreenCapture" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.EnableScreenCapture" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglEnableScreenCapture" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.IgnoreServerCertificateErrors" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.IgnoreServerCertificateErrors" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglIgnoreServerCertificateErrors" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Vnc.VNCConnectionMonitor" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Vnc.VNCConnectionMonitor" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglVNCConnectionMonitor" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.WaitForNtpSync" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.WaitForNtpSync" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglWaitForNtpSync" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.NTPServer1" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Time.NTPServer1" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtNtpServer1" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Time.NTPServer2" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Time.NTPServer2" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtNtpServer2" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Gesture.OpenServicePage" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Gesture.OpenServicePage" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglGestureServicePage" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.DisableGPU" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.DisableGPU" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglDisableGPU" attribute="value" />
 		</Binding>
 		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.NtpSyncTimeout" attribute="value" />
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.NtpSyncTimeout" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numNTPSyncTimeout" attribute="value" />
 		</Binding>
-	<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TPanel:PowerPanel.Data.Web.SynchronizeTimeWithWebServer" attribute="value" />
-<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglSynchronizeTimeWithWebServer" attribute="value" />
-</Binding>
-</Bindings>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.Web.SynchronizeTimeWithWebServer" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="tglSynchronizeTimeWithWebServer" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.ProductCode" attribute="value" />
+			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numProductCode" attribute="value" />
+		</Binding>
+	</Bindings>
 </BindingsSet>
