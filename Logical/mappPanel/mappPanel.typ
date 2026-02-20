@@ -166,7 +166,6 @@ TYPE
 		Manufacturer : STRING[79];
 		Model : STRING[79];
 		ProductCode : UDINT;
-		RevisionCounter : DINT;
 		SerialNumber : STRING[79];
 		SoftwareRevision : STRING[79];
 		VendorId : UDINT;

@@ -14,10 +14,7 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.DeviceRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtDeviceRevision" attribute="value" />
 		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.RevisionCounter" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numRevisionCounter" attribute="value" />
-		</Binding>
+		
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.SoftwareRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSoftwareRevision" attribute="value" />
