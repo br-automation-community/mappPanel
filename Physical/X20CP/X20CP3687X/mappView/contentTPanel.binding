@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="contentTPanel_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Bindings>
 		
@@ -14,10 +14,7 @@
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.DeviceRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtDeviceRevision" attribute="value" />
 		</Binding>
-		<Binding mode="twoWay">
-			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.RevisionCounter" attribute="value" />
-			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="numRevisionCounter" attribute="value" />
-		</Binding>
+		
 		<Binding mode="twoWay">
 			<Source xsi:type="opcUa" refId="::AsGlobalPV:PowerPanel.Data.AboutInfo.SoftwareRevision" attribute="value" />
 			<Target xsi:type="brease" contentRefId="contentTPanel" widgetRefId="txtSoftwareRevision" attribute="value" />

@@ -19,7 +19,6 @@ struct Browse_type BrowseDat[] = {
 	{"/2:Identification/2:HardwareRevision","PowerPanel.Data.AboutInfo.HardwareRevision","",0x0000,"","R"},
 	//{"/2:Identification/2:Manufacturer","Manufacturer","",0x0000,"","R"},
 	{"/2:Identification/2:Model","Model","",0x0000,"","R"},
-	{"/2:Identification/2:RevisionCounter","PowerPanel.Data.AboutInfo.RevisionCounter","",0x0000,"","R"},
 	{"/2:Identification/2:SerialNumber","PowerPanel.Data.AboutInfo.SerialNumber","",0x0000,"","R"},
 	{"/2:Identification/2:SoftwareRevision","PowerPanel.Data.AboutInfo.SoftwareRevision","",0x0000,"","R"},
 	{"/3:Configuration/4:Startup/4:StartMode","PowerPanel.Data.Startup.StartMode","",0x0000,"","W"},
